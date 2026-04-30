@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dra Tatiana Nishimura | Ortodontia e Odontologia Estética</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --accent:#7ba7bc;
+  --accent-mid:#9bbdce;
+  --accent-light:#d6e9f1;
+  --accent-pale:#eef6fa;
+  --mauve:#b08a95;
+  --mauve-light:#e0cdd1;
+  --mauve-pale:#f8f3f4;
+  --gray-900:#1c1c1c;
+  --gray-700:#3e3e3e;
+  --gray-500:#6a6a6a;
+  --gray-300:#aaa;
+  --gray-100:#efefef;
+  --gray-50:#f6f6f6;
+  --white:#ffffff;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:var(--gray-700);background:var(--white);overflow-x:hidden}
+
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(36px);transition:opacity 0.75s ease,transform 0.75s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-left{opacity:0;transform:translateX(-52px);transition:opacity 0.85s ease,transform 0.85s ease}
+.reveal-left.visible{opacity:1;transform:translateX(0)}
+.reveal-right{opacity:0;transform:translateX(52px);transition:opacity 0.85s ease,transform 0.85s ease}
+.reveal-right.visible{opacity:1;transform:translateX(0)}
+
+/* ── HELPERS ── */
+.eyebrow{
+  font-size:10px;font-weight:500;letter-spacing:5px;text-transform:uppercase;
+  color:var(--accent);display:block;margin-bottom:16px;
+}
+.h2-serif{
+  font-family:'Cormorant',serif;font-weight:300;
+  font-size:clamp(30px,2.8vw,46px);
+  line-height:1.2;color:var(--gray-900);margin-bottom:24px;
+}
+.h2-serif em{font-style:italic;color:var(--mauve)}
+.body-text{font-size:15px;font-weight:300;line-height:1.9;color:var(--gray-500);margin-bottom:14px}
+.section-header{text-align:center;margin-bottom:60px}
+.btn-book{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--accent);color:white;text-decoration:none;
+  font-size:11px;font-weight:500;letter-spacing:3px;text-transform:uppercase;
+  padding:17px 34px;border-radius:60px;
+  transition:all 0.3s ease;width:fit-content;
+  box-shadow:0 8px 26px rgba(123,167,188,0.35);
+}
+.btn-book:hover{background:#6897ae;transform:translateY(-2px);box-shadow:0 14px 34px rgba(123,167,188,0.42)}
+
+/* ══ SOBRE — primeira secao ══ */
+.sobre{
+  padding:72px 88px;
+  background:linear-gradient(160deg, var(--accent-pale) 0%, var(--white) 55%);
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:80px;align-items:center;
+  position:relative;overflow:hidden;
+  min-height:100vh;
+}
+.sobre::before{
+  content:'';position:absolute;
+  top:-120px;right:-120px;
+  width:480px;height:480px;border-radius:50%;
+  background:radial-gradient(circle,rgba(176,138,149,0.08) 0%,transparent 70%);
+  pointer-events:none;
+}
+.sobre-img-wrap{position:relative;z-index:1;max-width:380px;margin:0 auto}
+.sobre-oval{
+  width:100%;max-height:520px;aspect-ratio:3/4;
+  border-radius:50% 50% 50% 50% / 55% 55% 45% 45%;
+  overflow:hidden;
+  box-shadow:0 24px 70px rgba(0,0,0,0.1),0 0 0 1.5px rgba(123,167,188,0.15);
+}
+.sobre-oval img{width:100%;height:100%;object-fit:cover;object-position:center top;filter:saturate(0.88)}
+.sobre-deco{
+  position:absolute;top:-16px;left:-16px;right:16px;bottom:16px;
+  border:1.5px solid var(--accent-light);
+  border-radius:50% 50% 50% 50% / 55% 55% 45% 45%;
+  z-index:0;pointer-events:none;
+}
+.sobre-chip{
+  position:absolute;bottom:32px;right:-16px;
+  background:var(--gray-900);color:white;
+  font-size:9px;font-weight:400;letter-spacing:3px;
+  text-transform:uppercase;padding:13px 22px;
+  border-radius:4px;z-index:3;
+}
+.sobre-text-col{position:relative;z-index:1}
+.logo-sobre{
+  width:130px;height:auto;
+  filter:brightness(0.22);
+  margin-bottom:44px;display:block;
+}
+.form-badge{
+  display:flex;align-items:flex-start;gap:14px;
+  background:var(--white);border-left:3px solid var(--accent);
+  padding:16px 20px;border-radius:0 6px 6px 0;
+  margin:22px 0;box-shadow:0 2px 12px rgba(0,0,0,0.05);
+}
+.fb-icon{font-size:19px;flex-shrink:0;margin-top:1px}
+.fb-t{font-size:13px;font-weight:500;color:var(--gray-900);line-height:1.4}
+.fb-t small{display:block;font-size:11px;font-weight:300;color:var(--gray-300);margin-top:3px}
+.stats{display:flex;gap:44px;margin-top:34px;padding-top:34px;border-top:1px solid var(--gray-100)}
+.stat-n{font-family:'Cormorant',serif;font-size:40px;font-weight:300;color:var(--accent);line-height:1;display:block}
+.stat-l{font-size:11px;font-weight:300;color:var(--gray-300);letter-spacing:1px;margin-top:4px;display:block}
+
+/* ══ SERVIÇOS ══ */
+.servicos{background:var(--gray-50);padding:100px 88px}
+.cards-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:20px;max-width:1280px;margin:0 auto;
+}
+.card{
+  background:var(--white);border-radius:8px;
+  overflow:hidden;border:1px solid #e4e4e4;
+  transition:transform 0.35s ease,box-shadow 0.35s ease;
+}
+.card:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(0,0,0,0.09)}
+.card-photos{display:grid;grid-template-columns:1fr 1fr;height:172px}
+.card-photo{background:#e4e4e4;display:flex;align-items:center;justify-content:center}
+.card-photo:first-child{border-right:2px solid white}
+.ph-inner{display:flex;flex-direction:column;align-items:center;gap:7px}
+.ph-inner span{font-size:9px;letter-spacing:2px;color:#bbb;font-weight:400}
+.card-body{padding:24px 22px 22px}
+.card-body h3{
+  font-family:'Cormorant',serif;font-size:21px;font-weight:400;
+  color:var(--gray-900);margin-bottom:14px;padding-bottom:12px;
+  border-bottom:1px solid var(--gray-100);
+}
+.badge{
+  display:inline-block;font-size:9px;font-weight:500;
+  letter-spacing:2.5px;text-transform:uppercase;
+  padding:5px 11px;border-radius:3px;margin-bottom:8px;margin-top:12px;
+}
+.badge.ben{background:var(--accent-pale);color:var(--accent);border:1px solid var(--accent-light)}
+.badge.proc{background:var(--mauve-pale);color:var(--mauve);border:1px solid var(--mauve-light)}
+.card-body p{font-size:13px;font-weight:300;line-height:1.75;color:var(--gray-500)}
+
+/* ══ ANTES DEPOIS ══ */
+.antes-depois{background:var(--white);padding:100px 88px}
+.transf-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1140px;margin:0 auto}
+.transf-card{border-radius:8px;overflow:hidden;border:1px solid #e8e8e8;transition:transform 0.3s;background:white}
+.transf-card:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(0,0,0,0.07)}
+.transf-photos{display:grid;grid-template-columns:1fr 1fr;height:190px;position:relative}
+.transf-ph{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
+.transf-ph.before{background:#e2e2e2}
+.transf-ph.after{background:var(--accent-pale)}
+.transf-ph svg{opacity:0.45}
+.transf-ph span{font-size:9px;letter-spacing:3px;text-transform:uppercase;font-weight:500}
+.transf-ph.before span{color:#aaa}
+.transf-ph.after span{color:var(--accent)}
+.transf-arrow{
+  position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  width:28px;height:28px;background:white;
+  border-radius:50%;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 2px 10px rgba(0,0,0,0.12);font-size:12px;color:var(--accent);z-index:2;
+}
+.transf-label{padding:14px 18px;font-size:13px;font-weight:400;color:var(--gray-700);text-align:center;border-top:1px solid #f0f0f0}
+
+/* ══ DEPOIMENTOS ══ */
+.depoimentos{background:var(--gray-50);padding:100px 88px}
+.dep-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;max-width:1140px;margin:0 auto}
+.dep-card{
+  aspect-ratio:3/4;
+  border-radius:16px;
+  background:#ddd;overflow:hidden;
+  border:2px solid var(--accent-light);
+  box-shadow:0 4px 18px rgba(0,0,0,0.06);
+  display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;
+  transition:transform 0.3s,box-shadow 0.3s;cursor:pointer;
+}
+.dep-card:hover{transform:translateY(-5px);box-shadow:0 14px 38px rgba(123,167,188,0.2)}
+.dep-card svg{opacity:0.3}
+.dep-card span{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#aaa;font-weight:400}
+
+/* ══ INSTALAÇÕES ══ */
+.instalacoes{padding:100px 88px;background:var(--gray-900)}
+.instalacoes .eyebrow{color:var(--accent-mid)}
+.instalacoes .h2-serif{color:white}
+.inst-layout{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:60px;max-width:1140px;margin:56px auto 0;align-items:center;
+}
+.inst-pair{position:relative;height:400px}
+.inst-ph{
+  position:absolute;background:#363636;border-radius:14px;
+  display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;
+  transition:box-shadow 0.3s;
+}
+.inst-ph:hover{box-shadow:0 20px 60px rgba(0,0,0,0.45)}
+.inst-ph svg{opacity:0.28}
+.inst-ph .ph-lbl{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.3);font-weight:400}
+.inst-ph .corner-lbl{
+  position:absolute;bottom:13px;left:14px;
+  font-size:8px;letter-spacing:3px;text-transform:uppercase;
+  color:rgba(255,255,255,0.38);font-weight:400;
+}
+.pair-a .inst-ph:first-child{width:73%;height:72%;top:0;left:0;z-index:2}
+.pair-a .inst-ph:last-child{width:63%;height:60%;bottom:0;right:0;z-index:1;background:#2e2e2e}
+.pair-b .inst-ph:first-child{width:73%;height:72%;top:0;right:0;z-index:2}
+.pair-b .inst-ph:last-child{width:63%;height:60%;bottom:0;left:0;z-index:1;background:#2e2e2e}
+
+/* ══ CTA ══ */
+.cta-section{
+  padding:110px 88px;background:var(--white);text-align:center;
+  position:relative;overflow:hidden;
+}
+.cta-section::before{
+  content:'';position:absolute;
+  width:520px;height:520px;border-radius:50%;
+  background:radial-gradient(circle,rgba(123,167,188,0.07) 0%,transparent 70%);
+  top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;
+}
+.cta-section .h2-serif{font-size:clamp(32px,3.5vw,52px);margin-bottom:18px}
+.cta-section .body-text{max-width:420px;margin:0 auto 44px}
+
+/* ══ CONTATO ══ */
+.contato{padding:0 88px 100px;background:var(--white)}
+.contato-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1000px;margin:0 auto}
+.c-card{
+  display:flex;flex-direction:column;align-items:center;text-align:center;
+  padding:40px 28px;border-radius:12px;background:var(--gray-50);
+  border:1px solid transparent;text-decoration:none;transition:all 0.3s ease;
+}
+.c-card:hover{border-color:var(--accent-light);background:var(--accent-pale);transform:translateY(-3px)}
+.c-icon{font-size:26px;margin-bottom:12px}
+.c-card h4{font-family:'Cormorant',serif;font-size:17px;font-weight:400;color:var(--gray-900);margin-bottom:9px}
+.c-card p,.c-card span{font-size:13px;font-weight:300;color:var(--gray-500);line-height:1.7;display:block}
+.c-cta{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-top:10px;font-weight:500}
+
+/* ══ FOOTER ══ */
+footer{padding:34px 88px;background:#111;display:flex;align-items:center;justify-content:space-between}
+footer img{width:68px;filter:brightness(10);opacity:0.22}
+footer p{font-size:11px;font-weight:300;color:rgba(255,255,255,0.2);letter-spacing:0.5px}
+
+/* ══ RESPONSIVE ══ */
+@media(max-width:960px){
+  .sobre{grid-template-columns:1fr;padding:80px 28px;gap:48px}
+  .sobre-img-wrap{order:-1}
+  .servicos,.antes-depois,.depoimentos,.instalacoes,.cta-section{padding:80px 28px}
+  .contato{padding:0 28px 80px}
+  .cards-grid{grid-template-columns:1fr}
+  .dep-grid{grid-template-columns:1fr 1fr}
+  .transf-grid{grid-template-columns:1fr}
+  .contato-grid{grid-template-columns:1fr}
+  .inst-layout{grid-template-columns:1fr;gap:48px}
+  footer{padding:28px;flex-direction:column;gap:12px;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- ══ SOBRE — PRIMEIRA SEÇÃO ══ -->
+<section class="sobre">
+  <div class="sobre-img-wrap reveal-left">
+    <div class="sobre-deco"></div>
+    <div class="sobre-oval">
+      <img src="https://i.ibb.co/DPDXPYbj/perfil.png" alt="Foto da Dra Tatiana Nishimura" loading="lazy">
+    </div>
+    <div class="sobre-chip">Bertioga — SP</div>
+  </div>
+
+  <div class="sobre-text-col reveal-right">
+    <span class="eyebrow">Ortodontia &amp; Odontologia Estética</span>
+    <h1 class="h2-serif" style="font-size:clamp(34px,3.5vw,54px);margin-bottom:20px">
+      O sorriso que você <em>merece</em>,<br>com quem cuida.
+    </h1>
+    <p class="body-text">Com formação pela USP e especialização em Ortodontia e Odontologia Estética, a Dra. Tatiana Nishimura une precisão técnica e sensibilidade estética para resultados que respeitam a individualidade de cada paciente.</p>
+    <div class="form-badge">
+      <span class="fb-icon">🎓</span>
+      <div class="fb-t">Faculdade de Odontologia de São Paulo<small>Universidade de São Paulo — USP</small></div>
+    </div>
+    <p class="body-text">Cada plano de tratamento é desenvolvido com atenção total aos seus objetivos, expectativas e características naturais.</p>
+    <div style="margin-bottom:36px">
+      <div class="stats">
+        <div><span class="stat-n">+10</span><span class="stat-l">Anos de experiência</span></div>
+        <div><span class="stat-n">+7</span><span class="stat-l">Especialidades</span></div>
+        <div><span class="stat-n">100%</span><span class="stat-l">Dedicação</span></div>
+      </div>
+    </div>
+    <a href="https://wa.me/5513997251058?text=Olá,%20gostaria%20de%20agendar%20uma%20avaliação!" target="_blank" class="btn-book">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      Agendar Avaliação
+    </a>
+  </div>
+</section>
+
+<!-- ══ SERVIÇOS ══ -->
+<section class="servicos">
+  <div class="section-header reveal">
+    <span class="eyebrow">Procedimentos</span>
+    <h2 class="h2-serif">Nossos Tratamentos</h2>
+  </div>
+  <div class="cards-grid">
+
+        <div class="card reveal" style="transition-delay:0.0s">
+          <div class="card-photos">
+            <div class="card-photo"><img src="https://i.ibb.co/rRs5k9zt/antes-e-depois-2.png" alt="Clareamento Dental" style="width:100%;height:100%;object-fit:cover;"></div>
+            <div class="card-photo"><img src="https://i.ibb.co/gqxgVJB/antes-e-depois-1.png" alt="Clareamento Dental" style="width:100%;height:100%;object-fit:cover;"></div>
+          </div>
+          <div class="card-body">
+            <h3>Clareamento Dental</h3>
+            <div class="badge ben">BENEFÍCIOS</div>
+            <p>Dentes até vários tons mais claros com segurança e resultado natural duradouro.</p>
+            <div class="badge proc">PROCESSO</div>
+            <p>Aplicação de gel clareador com ativação profissional. Sessão única ou complemento em casa.</p>
+          </div>
+        </div>
+        <div class="card reveal" style="transition-delay:0.12s">
+          <div class="card-photos">
+            <div class="card-photo"><div class="ph-inner"><svg viewBox="0 0 24 24" fill="none" stroke="#b8b8b8" stroke-width="1.3" width="26" height="26"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg><span>FOTO</span></div></div>
+            <div class="card-photo"><div class="ph-inner"><svg viewBox="0 0 24 24" fill="none" stroke="#b8b8b8" stroke-width="1.3" width="26" height="26"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg><span>FOTO</span></div></div>
+          </div>
+          <div class="card-body">
+            <h3>Estética e reabilitação</h3>
+            <div class="badge ben">BENEFÍCIOS</div>
+            <p>Tratamento discreto e removível, sem restrições alimentares e com resultado estético impecável.</p>
+            <div class="badge proc">PROCESSO</div>
+            <p>Planejamento digital 3D com sequência de alinhadores trocados periodicamente para mover os dentes gradualmente.</p>
+          </div>
+        </div>
+        <div class="card reveal" style="transition-delay:0.24s">
+          <div class="card-photos">
+            <div class="card-photo"><div class="ph-inner"><svg viewBox="0 0 24 24" fill="none" stroke="#b8b8b8" stroke-width="1.3" width="26" height="26"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg><span>FOTO</span></div></div>
+            <div class="card-photo"><div class="ph-inner"><svg viewBox="0 0 24 24" fill="none" stroke="#b8b8b8" stroke-width="1.3" width="26" height="26"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg><span>FOTO</span></div></div>
+          </div>
+          <div class="card-body">
+            <h3>Limpeza Dental</h3>
+            <div class="badge ben">BENEFÍCIOS</div>
+            <p>Prevenção de cáries e doenças gengivais. Dentes mais limpos, hálito fresco e sorriso renovado.</p>
+            <div class="badge proc">PROCESSO</div>
+            <p>Remoção de tártaro, placa bacteriana e manchas com ultrassom e polimento profissional. Rápido e indolor.</p>
+          </div>
+        </div>
+        <div class="card reveal" style="transition-delay:0.0s">
+          <div class="card-photos">
+            <div class="card-photo"><div class="ph-inner"><svg viewBox="0 0 24 24" fill="none" stroke="#b8b8b8" stroke-width="1.3" width="26" height="26"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg><span>FOTO</span></div></div>
+            <div class="card-photo"><div class="ph-inner"><svg viewBox="0 0 24 24" fill="none" stroke="#b8b8b8" stroke-width="1.3" width="26" height="26"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg><span>FOTO</span></div></div>
+          </div>
+          <div class="card-body">
+            <h3>Aparelho Ortodôntico</h3>
+            <div class="badge ben">BENEFÍCIOS</div>
+            <p>Correção de alinhamento e mordida. Resultado funcional e estético duradouro para toda a família.</p>
+            <div class="badge proc">PROCESSO</div>
+            <p>Disponível em versão metálica ou estética (safira/cerâmica). Acompanhamento mensal com ajustes progressivos.</p>
+          </div>
+        </div>
+        <div class="card reveal" style="transition-delay:0.12s">
+          <div class="card-photos">
+            <div class="card-photo"><div class="ph-inner"><svg viewBox="0 0 24 24" fill="none" stroke="#b8b8b8" stroke-width="1.3" width="26" height="26"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg><span>FOTO</span></div></div>
+            <div class="card-photo"><div class="ph-inner"><svg viewBox="0 0 24 24" fill="none" stroke="#b8b8b8" stroke-width="1.3" width="26" height="26"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg><span>FOTO</span></div></div>
+          </div>
+          <div class="card-body">
+            <h3>Restaurações</h3>
+            <div class="badge ben">BENEFÍCIOS</div>
+            <p>Recuperação de dentes danificados com material de alta qualidade que imita a cor natural dos dentes.</p>
+            <div class="badge proc">PROCESSO</div>
+            <p>Remoção do tecido afetado e aplicação de resina composta em camadas, com finalização estética precisa.</p>
+          </div>
+        </div>
+        <div class="card reveal" style="transition-delay:0.24s">
+          <div class="card-photos">
+            <div class="card-photo"><div class="ph-inner"><svg viewBox="0 0 24 24" fill="none" stroke="#b8b8b8" stroke-width="1.3" width="26" height="26"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg><span>FOTO</span></div></div>
+            <div class="card-photo"><div class="ph-inner"><svg viewBox="0 0 24 24" fill="none" stroke="#b8b8b8" stroke-width="1.3" width="26" height="26"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg><span>FOTO</span></div></div>
+          </div>
+          <div class="card-body">
+            <h3>Lentes e Facetas</h3>
+            <div class="badge ben">BENEFÍCIOS</div>
+            <p>Transformação completa do sorriso com resultado ultra-natural — correção de cor, forma e tamanho.</p>
+            <div class="badge proc">PROCESSO</div>
+            <p>Finas lâminas de porcelana confeccionadas sob medida e cimentadas com mínimo desgaste dental.</p>
+          </div>
+        </div>
+        <div class="card reveal" style="transition-delay:0.0s">
+          <div class="card-photos">
+            <div class="card-photo"><div class="ph-inner"><svg viewBox="0 0 24 24" fill="none" stroke="#b8b8b8" stroke-width="1.3" width="26" height="26"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg><span>FOTO</span></div></div>
+            <div class="card-photo"><div class="ph-inner"><svg viewBox="0 0 24 24" fill="none" stroke="#b8b8b8" stroke-width="1.3" width="26" height="26"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg><span>FOTO</span></div></div>
+          </div>
+          <div class="card-body">
+            <h3>Peridontia</h3>
+            <div class="badge ben">BENEFÍCIOS</div>
+            <p>Especialidade odontológica focada na prevenção, diagnóstico e tratamento das doenças que afetam os tecidos de sustentação dos dentes</p>
+            <div class="badge proc">PROCESSO</div>
+            <p>raspagem supra e subgengival (limpeza profunda), cirurgias para redução de bolsas periodontais e procedimentos de enxerto para corrigir recessões gengivais.</p>
+          </div>
+        </div>
+  </div>
+</section>
+
+<!-- ══ ANTES E DEPOIS ══ -->
+<section class="antes-depois">
+  <div class="section-header reveal">
+    <span class="eyebrow">Transformações</span>
+    <h2 class="h2-serif">Antes &amp; Depois</h2>
+  </div>
+  <div class="transf-grid">
+    
+    <div class="transf-card reveal" style="transition-delay:0.0s">
+      <div class="transf-photos">
+        <div class="transf-ph before"><img src="https://i.ibb.co/rRs5k9zt/antes-e-depois-2.png" alt="Clareamento Dental" style="width:100%;height:100%;object-fit:cover;"></div>
+        <div class="transf-ph after"><svg viewBox="0 0 24 24" fill="none" stroke="#7ba7bc" stroke-width="1.3" width="26" height="26"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg><span>DEPOIS</span></div>
+        <div class="transf-arrow">→</div>
+      </div>
+      <div class="transf-label">Clareamento Dental</div>
+    </div>
+    <div class="transf-card reveal" style="transition-delay:0.12s">
+      <div class="transf-photos">
+        <div class="transf-ph before"><img src="https://i.ibb.co/rRs5k9zt/antes-e-depois-2.png" alt="Clareamento Dental" style="width:100%;height:100%;object-fit:cover;"></div>
+        <div class="transf-ph after"><svg viewBox="0 0 24 24" fill="none" stroke="#7ba7bc" stroke-width="1.3" width="26" height="26"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg><span>DEPOIS</span></div>
+        <div class="transf-arrow">→</div>
+      </div>
+      <div class="transf-label">Lentes de Porcelana</div>
+    </div>
+    <div class="transf-card reveal" style="transition-delay:0.24s">
+      <div class="transf-photos">
+        <div class="transf-ph before"><svg viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="1.3" width="26" height="26"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg><span>ANTES</span></div>
+        <div class="transf-ph after"><svg viewBox="0 0 24 24" fill="none" stroke="#7ba7bc" stroke-width="1.3" width="26" height="26"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg><span>DEPOIS</span></div>
+        <div class="transf-arrow">→</div>
+      </div>
+      <div class="transf-label">Ortodontia</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ DEPOIMENTOS ══ -->
+<section class="depoimentos">
+  <div class="section-header reveal">
+    <span class="eyebrow">Satisfação</span>
+    <h2 class="h2-serif">Depoimentos dos Pacientes</h2>
+  </div>
+  <div class="dep-grid">
+    
+    <div class="dep-card reveal" style="transition-delay:0.0s">
+      <img src="https://i.ibb.co/Y4mQvgBc/ceramica-sobre-implante.png" alt="Cerâmica sobre Implante" style="width:100%;height:100%;object-fit:cover;">
+    </div>
+    <div class="dep-card reveal" style="transition-delay:0.1s">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#bbb" stroke-width="1.1" width="38" height="38"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+      <span>Foto do Paciente</span>
+    </div>
+    <div class="dep-card reveal" style="transition-delay:0.2s">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#bbb" stroke-width="1.1" width="38" height="38"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+      <span>Foto do Paciente</span>
+    </div>
+    <div class="dep-card reveal" style="transition-delay:0.30000000000000004s">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#bbb" stroke-width="1.1" width="38" height="38"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+      <span>Foto do Paciente</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══ INSTALAÇÕES ══ -->
+<section class="instalacoes">
+  <div class="section-header reveal">
+    <span class="eyebrow">Nossa Clínica</span>
+    <h2 class="h2-serif">Conheça nossas instalações</h2>
+  </div>
+  <div class="inst-layout">
+    <div class="inst-pair pair-a reveal-left">
+      <div class="inst-ph" style="width:73%;height:72%;top:0;left:0;z-index:2">
+        <img src="https://i.ibb.co/TBsFtQC9/cs1.webp" alt="Clínica" style="width:100%;height:100%;object-fit:cover;">
+      </div>
+      <div class="inst-ph" style="width:63%;height:60%;bottom:0;right:0;z-index:1">
+        <img src="https://i.ibb.co/BVwL1xvW/cs4.webp" alt="Recepção" style="width:100%;height:100%;object-fit:cover;">
+      </div>
+    </div>
+    <div class="inst-pair pair-b reveal-right">
+      <div class="inst-ph" style="width:73%;height:72%;top:0;right:0;z-index:2">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.2" width="34" height="34"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg>
+        <span class="ph-lbl">FOTO</span>
+        <span class="corner-lbl">SALA DE ATENDIMENTO</span>
+      </div>
+      <div class="inst-ph" style="width:63%;height:60%;bottom:0;left:0;z-index:1">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.2" width="26" height="26"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg>
+        <span class="ph-lbl">FOTO</span>
+        <span class="corner-lbl">EQUIPAMENTOS</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA ══ -->
+<section class="cta-section">
+  <span class="eyebrow reveal">Dê o primeiro passo</span>
+  <h2 class="h2-serif reveal">Agende sua <em>avaliação gratuita</em><br>e transforme seu sorriso</h2>
+  <p class="body-text reveal">Entre em contato pelo WhatsApp. Atendemos com carinho em Bertioga — SP.</p>
+  <a href="https://wa.me/5513997251058?text=Olá,%20gostaria%20de%20agendar%20uma%20avaliação!" target="_blank" class="btn-book reveal">
+    <svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.553 4.124 1.522 5.866L.06 23.62a.75.75 0 0 0 .918.918l5.786-1.464A11.935 11.935 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.887 0-3.661-.497-5.197-1.37l-.37-.216-3.835.971.986-3.803-.228-.381A9.943 9.943 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+    Falar no WhatsApp
+  </a>
+</section>
+
+<!-- ══ CONTATO ══ -->
+<section class="contato">
+  <div class="section-header reveal" style="margin-bottom:48px">
+    <span class="eyebrow">Localização</span>
+    <h2 class="h2-serif">Como nos encontrar</h2>
+  </div>
+  <div class="contato-grid">
+    <a class="c-card reveal" href="https://google.com/maps/place/Cirurgiã+Dentista+Dra+Tatiana+Nishimura/data=!4m2!3m1!1s0x0:0xfd3a356098c8cff0?sa=X&ved=1t:2428&ictx=111" target="_blank">
+      <span class="c-icon">📍</span><h4>Endereço</h4>
+      <p>Av. Anchieta, 3331<br>Maitinga<br>Bertioga - SP, 11250-000</p>
+      <span class="c-cta">Ver no mapa →</span>
+    </a>
+    <a class="c-card reveal" style="transition-delay:0.1s" href="https://wa.me/5513997251058?text=Olá,%20gostaria%20de%20agendar%20uma%20avaliação!" target="_blank">
+      <span class="c-icon">📱</span><h4>WhatsApp</h4>
+      <span>(13) 99725-1058</span>
+      <span class="c-cta">Conversar agora →</span>
+    </a>
+    <a class="c-card reveal" style="transition-delay:0.2s" href="https://www.instagram.com/odontologa.tatiana.nishimura/" target="_blank">
+      <span class="c-icon">📸</span><h4>Instagram</h4>
+      <span>@Dra Tatiana Nishimura</span>
+      <span class="c-cta">Ver perfil →</span>
+    </a>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <p>© 2025 Dra Tatiana Nishimura · Ortodontia e Odontologia Estética</p>
+  <p>FORP — USP</p>
+</footer>
+
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) e.target.classList.add('visible');
+  });
+}, { threshold: 0.1, rootMargin:'0px 0px -40px 0px' });
+document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
